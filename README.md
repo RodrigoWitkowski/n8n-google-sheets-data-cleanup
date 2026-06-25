@@ -8,22 +8,7 @@ Invalid records are routed to a separate branch where an `Error_Reason` field is
 
 ## Workflow Overview
 
-```mermaid
-flowchart LR
-    A[Manual Trigger] --> D[Read Source Rows]
-    B[Row Added Trigger] --> D
-    C[Row Updated Trigger] --> D
-
-    D --> E{Required Fields Valid?}
-
-    E -->|Yes| F[Normalize and Map Fields]
-    F --> G[Remove Duplicate Emails]
-    G --> H[Add Processing Timestamp]
-    H --> I[Append or Update Clean Sheet]
-
-    E -->|No| J[Generate Error Reason]
-    J --> K[End Rejected Branch]
-```
+<img width="1526" height="562" alt="image" src="https://github.com/user-attachments/assets/de9f056e-b636-4b10-b6e1-b0e6f101d1a9" />
 
 ## Features
 
